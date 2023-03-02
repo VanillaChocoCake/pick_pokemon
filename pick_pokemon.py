@@ -62,14 +62,18 @@ while True:
                 res2x.append(attack_type)
             else:
                 res1x.append(attack_type)
+    res_str_2x = ['2x']
+    res_str_1x = ['1x']
     if len(res2x) != 0:
-        res = res2x
-        res_str = ['2x']
-    else:
-        res = res1x
-        res_str = ['1x']
-    for i in res:
-        for j in type_table:
-            if type_table[j] == i:
-                res_str.append(j)
-    print(res_str)
+        for i in res2x:
+            for j in type_table:
+                if type_table[j] == i:
+                    res_str_2x.append(j)
+        print(res_str_2x)
+    if len(res1x) != 0:
+        for i in res1x:
+            for j in type_table:
+                if type_table[j] == i:
+                    res_str_1x.append(j)
+        print(res_str_1x)
+
